@@ -4,6 +4,7 @@ extends CharacterBody2D
 var direction : Vector2 = Vector2.ZERO
 
 
+
 func read_input():
 	velocity = Vector2.ZERO
 	
