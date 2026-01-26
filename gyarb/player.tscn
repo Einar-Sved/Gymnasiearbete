@@ -32,11 +32,11 @@ shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(50, 50)
-zoom = Vector2(5, 5)
+zoom = Vector2(8, 8)
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(54, 54)
-scale = Vector2(3.64583, 3.45052)
+position = Vector2(54, 54.5)
+scale = Vector2(7.09635, 6.28255)
 color = Color(1, 0.969691, 0.875512, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_d21ai")
