@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="gyarb"
-run/main_scene="uid://bbip2b1ycorwa"
+run/main_scene="uid://dfdm6j6vuvksi"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

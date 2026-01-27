@@ -1,0 +1,125 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfdm6j6vuvksi"]
+
+[ext_resource type="Texture2D" uid="uid://dkuv1tgbhd7l2" path="res://FREE_Adventurer 2D Pixel Art/Sprites/ATTACK 1/attack1_down.png" id="1_b07fi"]
+[ext_resource type="Script" uid="uid://bllx1becxwwsg" path="res://main_menu.gd" id="1_x6lt7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x6lt7"]
+texture = ExtResource("1_b07fi")
+modulate_color = Color(0.740036, 5.14999e-05, 0.578553, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2ps0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2ps0"]
+bg_color = Color(0.687215, 0.687215, 0.687215, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_siod4"]
+bg_color = Color(0.583047, 0.583047, 0.583047, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x6lt7")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_x6lt7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -137.0
+offset_right = 156.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 7
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x2ps0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x2ps0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_siod4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_siod4")
+text = "Start Game"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x2ps0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x2ps0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_siod4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_siod4")
+text = "exit"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x2ps0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x2ps0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_siod4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_siod4")
+text = "options"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.469
+anchor_right = 0.5
+anchor_bottom = 0.469
+offset_left = -148.0
+offset_top = -207.912
+offset_right = 145.0
+offset_bottom = -96.912
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 33
+text = "den ondskefulla labyrinten"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
