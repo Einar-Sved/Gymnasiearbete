@@ -1,5 +1,20 @@
 extends CharacterBody2D
 
+var keys: Array = []
+
+func add_key(color):
+	if color not in keys:
+		keys.append(color)
+		update_hotbar()
+
+func update_hotbar():
+	var hotbar = get_tree().get_first_node_in_group("hotbar")
+	if hotbar:
+		hotbar.update(keys)
+	else:
+		push_warning("Hotbar hittades inte")
+
+
 
 var direction : Vector2 = Vector2.ZERO
 

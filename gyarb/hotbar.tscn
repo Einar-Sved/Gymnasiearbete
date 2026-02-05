@@ -1,0 +1,102 @@
+[gd_scene load_steps=18 format=3 uid="uid://dfwh2txr746ki"]
+
+[ext_resource type="PackedScene" uid="uid://ca2j188xss3br" path="res://hotbar_button.tscn" id="1_mjyg7"]
+[ext_resource type="Script" uid="uid://cyh2h2kmcc3au" path="res://hotbar.gd" id="1_qbt7h"]
+[ext_resource type="Texture2D" uid="uid://djoxr1t11epys" path="res://ChatGPT Image 2 feb. 2026 14_49_09.png" id="2_l6vt0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6vt0"]
+atlas = ExtResource("2_l6vt0")
+region = Rect2(121, 134, 363, 213)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tjp8"]
+atlas = ExtResource("2_l6vt0")
+region = Rect2(568, 134, 364, 214)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yape"]
+atlas = ExtResource("2_l6vt0")
+region = Rect2(119, 591, 363, 215)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_siatk"]
+atlas = ExtResource("2_l6vt0")
+region = Rect2(567, 590, 364, 216)
+
+[sub_resource type="InputEventKey" id="InputEventKey_mjyg7"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_qbt7h"]
+events = [SubResource("InputEventKey_mjyg7")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_qbt7h"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_l6vt0"]
+events = [SubResource("InputEventKey_qbt7h")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_l6vt0"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_0tjp8"]
+events = [SubResource("InputEventKey_l6vt0")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_hh0l3"]
+keycode = 52
+
+[sub_resource type="Shortcut" id="Shortcut_8yape"]
+events = [SubResource("InputEventKey_hh0l3")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_0tjp8"]
+device = -1
+keycode = 53
+unicode = 53
+
+[sub_resource type="Shortcut" id="Shortcut_siatk"]
+events = [SubResource("InputEventKey_0tjp8")]
+
+[node name="hotbar" type="Control" groups=["hotbar"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qbt7h")
+yellow_key = SubResource("AtlasTexture_l6vt0")
+green_key = SubResource("AtlasTexture_0tjp8")
+blue_key = SubResource("AtlasTexture_8yape")
+red_key = SubResource("AtlasTexture_siatk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 636.0
+offset_bottom = 60.0
+
+[node name="HotbarButton" parent="HBoxContainer" instance=ExtResource("1_mjyg7")]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+shortcut = SubResource("Shortcut_qbt7h")
+
+[node name="HotbarButton2" parent="HBoxContainer" instance=ExtResource("1_mjyg7")]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+shortcut = SubResource("Shortcut_l6vt0")
+
+[node name="HotbarButton3" parent="HBoxContainer" instance=ExtResource("1_mjyg7")]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+shortcut = SubResource("Shortcut_0tjp8")
+
+[node name="HotbarButton4" parent="HBoxContainer" instance=ExtResource("1_mjyg7")]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+shortcut = SubResource("Shortcut_8yape")
+
+[node name="HotbarButton5" parent="HBoxContainer" instance=ExtResource("1_mjyg7")]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+shortcut = SubResource("Shortcut_siatk")
