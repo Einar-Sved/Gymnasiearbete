@@ -1,21 +1,17 @@
 extends Control
 
-# Koppla nyckelbilder i Inspector
 @export var yellow_key : Texture2D
 @export var green_key  : Texture2D
 @export var blue_key   : Texture2D
 @export var red_key    : Texture2D
 
-# Referens till HBoxContainer
 @onready var hbox = $HBoxContainer
 
 func update(keys: Array) -> void:
 	# Töm alla slots först
 	for slot in hbox.get_children():
-		if slot is TextureButton:
-			slot.texture_normal = null
-		elif slot is TextureRect:
-			slot.texture = null
+		if slot is Button:
+			slot.icon = null
 
 	# Fyll i nycklar
 	for i in range(keys.size()):
@@ -28,11 +24,9 @@ func update(keys: Array) -> void:
 			1: tex = green_key
 			2: tex = blue_key
 			3: tex = red_key
-		# sätt bilden
-		if slot is TextureButton:
-			slot.texture_normal = tex
-		elif slot is TextureRect:
-			slot.texture = tex
+		if slot is Button and tex != null:
+			slot.icon = tex
+
 
 
 # Hjälpfunktion
