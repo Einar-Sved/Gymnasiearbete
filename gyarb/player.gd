@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+
 var keys: Array = []
 
 func add_key(color):
@@ -40,10 +43,31 @@ func read_input():
 	velocity = velocity.normalized()*100
 	move_and_slide()
 
+func update_animation():
+	if velocity != Vector2.ZERO:
+		if direction == Vector2(0, -1):
+			anim.play("walk_up")
+		elif direction == Vector2(0, 1):
+			anim.play("walk_down")
+		elif direction == Vector2(-1, 0):
+			anim.play("walk_left")
+		elif direction == Vector2(1, 0):
+			anim.play("walk_right")
+	else:
+		if direction == Vector2(0, -1):
+			anim.play("idle_up")
+		elif direction == Vector2(0, 1):
+			anim.play("idle_down")
+		elif direction == Vector2(-1, 0):
+			anim.play("idle_left")
+		elif direction == Vector2(1, 0):
+			anim.play("idle_right")
 
 
 func _physics_process(delta: float) -> void:
 	read_input()
+	update_animation()
+
 
 
 

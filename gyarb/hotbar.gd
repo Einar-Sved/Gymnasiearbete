@@ -8,12 +8,10 @@ extends Control
 @onready var hbox = $HBoxContainer
 
 func update(keys: Array) -> void:
-	# Töm alla slots först
 	for slot in hbox.get_children():
 		if slot is Button:
 			slot.icon = null
 
-	# Fyll i nycklar
 	for i in range(keys.size()):
 		if i >= hbox.get_child_count():
 			break
@@ -29,7 +27,6 @@ func update(keys: Array) -> void:
 
 
 
-# Hjälpfunktion
 func set_slot_texture(slot, tex: Texture2D) -> void:
 	if slot is TextureButton:
 		slot.texture_normal = tex
