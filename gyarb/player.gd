@@ -17,6 +17,15 @@ func update_hotbar():
 	else:
 		push_warning("Hotbar hittades inte")
 
+func has_key(color) -> bool:
+	return color in keys
+
+func remove_key(color) -> void:
+	if color in keys:
+		keys.erase(color)
+		update_hotbar()
+
+
 
 
 var direction : Vector2 = Vector2.ZERO

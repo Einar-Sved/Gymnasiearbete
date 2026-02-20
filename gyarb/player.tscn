@@ -520,7 +520,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-z_index = 1
+z_index = 11
 collision_mask = 5
 script = ExtResource("1_onrkg")
 

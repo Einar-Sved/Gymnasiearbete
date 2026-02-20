@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmvm02i54o565"]
+
+[ext_resource type="Script" uid="uid://b3neicyqxegjw" path="res://blue_plate.gd" id="1_aecf8"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_k5rfr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aecf8"]
+
+[node name="blue_plate" type="Area2D" groups=["plates"]]
+position = Vector2(-41, 380)
+script = ExtResource("1_aecf8")
+required_color = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.237376, 0.352657, 1, 1)
+z_index = 10
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_k5rfr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 10
+shape = SubResource("RectangleShape2D_aecf8")
