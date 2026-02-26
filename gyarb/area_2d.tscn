@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://q2d0tvu865yf"]
 
-[ext_resource type="Script" uid="uid://bu6icih6aqrdv" path="res://area_2d.gd" id="1_gf172"]
+[sub_resource type="GDScript" id="GDScript_nsakb"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dl81w"]
 
@@ -8,7 +8,7 @@
 
 [node name="yellow_plate" type="Area2D" groups=["plates"]]
 position = Vector2(-38, 331)
-script = ExtResource("1_gf172")
+script = SubResource("GDScript_nsakb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 0, 1)

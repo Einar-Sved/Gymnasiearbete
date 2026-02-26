@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpf376rcqfcbe"]
+
+[ext_resource type="Texture2D" uid="uid://bfsvcn0iwg84b" path="res://The Fantasy Tileset - Animated Character/Main Character/Character_Idle.png" id="1_f50pn"]
+[ext_resource type="Script" uid="uid://bdmrp4haf6087" path="res://npc_area.gd" id="2_ij6vw"]
+
+[sub_resource type="GDScript" id="GDScript_ij6vw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij6vw"]
+size = Vector2(29.5, 38.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghijl"]
+
+[node name="NPC" type="CharacterBody2D"]
+script = SubResource("GDScript_ij6vw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 12
+position = Vector2(81.5, -48.5)
+scale = Vector2(0.789473, 0.757576)
+texture = ExtResource("1_f50pn")
+region_enabled = true
+region_rect = Rect2(10, 152, 19, 33)
+
+[node name="NPC_AREA" type="Area2D" parent="."]
+script = ExtResource("2_ij6vw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_AREA"]
+z_index = 10
+position = Vector2(81.75, -48.75)
+shape = SubResource("RectangleShape2D_ij6vw")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+z_index = 20
+offset_left = -59.0
+offset_top = -46.0
+offset_right = 108.0
+offset_bottom = -33.0
+theme_override_font_sizes/font_size = 9
+text = "Hitta nycklarna, lägg dom på rätt plats"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ghijl")
+
+[connection signal="body_entered" from="NPC_AREA" to="NPC_AREA" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC_AREA" to="NPC_AREA" method="_on_body_exited"]
