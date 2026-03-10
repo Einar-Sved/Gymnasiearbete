@@ -9,9 +9,16 @@ func show_victory():
 
 func check_all_plates():
 	var plates = get_tree().get_nodes_in_group("plates")
+	print("plates found:", plates.size())
+
 	for p in plates:
+		print(p.name, p)
+		if not "activated" in p:
+			continue
+
 		if not p.activated:
 			return
+
 	show_victory()
 
 
@@ -20,6 +27,7 @@ func check_all_plates():
 func _ready() -> void:
 	pass # Replace with function body.
 	print(self.name)
+	$CanvasModulate.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
