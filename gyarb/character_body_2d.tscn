@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpf376rcqfcbe"]
+[gd_scene load_steps=5 format=3 uid="uid://bpf376rcqfcbe"]
 
 [ext_resource type="Texture2D" uid="uid://bfsvcn0iwg84b" path="res://The Fantasy Tileset - Animated Character/Main Character/Character_Idle.png" id="1_f50pn"]
 [ext_resource type="Script" uid="uid://bdmrp4haf6087" path="res://npc_area.gd" id="2_ij6vw"]
@@ -7,8 +7,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij6vw"]
 size = Vector2(29.5, 38.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghijl"]
 
 [node name="NPC" type="CharacterBody2D"]
 script = SubResource("GDScript_ij6vw")
@@ -32,15 +30,24 @@ shape = SubResource("RectangleShape2D_ij6vw")
 [node name="Label" type="Label" parent="."]
 visible = false
 z_index = 20
-offset_left = -59.0
-offset_top = -46.0
-offset_right = 108.0
-offset_bottom = -33.0
+offset_left = 5.0
+offset_top = -48.0
+offset_right = 107.0
+offset_bottom = -19.0
 theme_override_font_sizes/font_size = 9
-text = "Hitta nycklarna, lägg dom på rätt plats"
+text = "Hitta nycklarna, 
+lägg dom på rätt plats"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ghijl")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="body_entered" from="NPC_AREA" to="NPC_AREA" method="_on_body_entered"]
 [connection signal="body_exited" from="NPC_AREA" to="NPC_AREA" method="_on_body_exited"]
