@@ -2,9 +2,8 @@ extends CharacterBody2D
 
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-
 var keys: Array = []
-
+@onready var 
 func add_key(color):
 	if color not in keys:
 		keys.append(color)
@@ -49,7 +48,7 @@ func read_input():
 		velocity.x +=2
 		direction = Vector2(1,0)
 		
-	velocity = velocity.normalized()*100
+	velocity = velocity.normalized()*GameSettings.speed
 	move_and_slide()
 
 func update_animation():
