@@ -3,7 +3,6 @@ extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 var keys: Array = []
-@onready var 
 func add_key(color):
 	if color not in keys:
 		keys.append(color)
