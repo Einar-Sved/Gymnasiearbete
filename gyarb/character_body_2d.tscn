@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpf376rcqfcbe"]
+[gd_scene load_steps=12 format=3 uid="uid://bpf376rcqfcbe"]
 
 [ext_resource type="Texture2D" uid="uid://bfsvcn0iwg84b" path="res://The Fantasy Tileset - Animated Character/Main Character/Character_Idle.png" id="1_f50pn"]
 [ext_resource type="Script" uid="uid://bdmrp4haf6087" path="res://npc_area.gd" id="2_ij6vw"]
@@ -21,6 +21,32 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghijl"]
+bg_color = Color(0.882353, 0.54902, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_44cfe"]
+bg_color = Color(0.743574, 0.000732743, 0.798491, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dd465"]
+bg_color = Color(0.823529, 0.313726, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhvu3"]
+bg_color = Color(0.882353, 0.54902, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4sjlk"]
+bg_color = Color(0.745098, 0, 0.8, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qp52p"]
+bg_color = Color(0.823529, 0.313726, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="NPC" type="CharacterBody2D"]
 script = SubResource("GDScript_ij6vw")
 
@@ -40,22 +66,14 @@ z_index = 10
 position = Vector2(81.75, -48.75)
 shape = SubResource("RectangleShape2D_ij6vw")
 
-[node name="Label" type="Label" parent="."]
-visible = false
-z_index = 20
-offset_left = 5.0
-offset_top = -48.0
-offset_right = 107.0
-offset_bottom = -19.0
-theme_override_font_sizes/font_size = 9
-text = "Hitta nycklarna, 
-lägg dom på rätt plats"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="CanvasLayer/CenterContainer"]
 custom_minimum_size = Vector2(400, 200)
@@ -77,7 +95,7 @@ theme_override_constants/separation = 15
 
 [node name="Label" type="Label" parent="CanvasLayer/CenterContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 35
 text = "Vilken vill du välja?"
 horizontal_alignment = 1
 
@@ -88,11 +106,21 @@ alignment = 1
 
 [node name="speed" type="Button" parent="CanvasLayer/CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghijl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_44cfe")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dd465")
 text = "snabbare"
 
 [node name="light" type="Button" parent="CanvasLayer/CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_lhvu3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4sjlk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qp52p")
 text = "bättre syn"
 
 [connection signal="body_entered" from="NPC_AREA" to="NPC_AREA" method="_on_body_entered"]
 [connection signal="body_exited" from="NPC_AREA" to="NPC_AREA" method="_on_body_exited"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/speed" to="NPC_AREA" method="_on_speed_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/light" to="NPC_AREA" method="_on_light_pressed"]

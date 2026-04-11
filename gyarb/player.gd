@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var light =$PointLight2D2
+var direction : Vector2 = Vector2.ZERO
 var keys: Array = []
 func add_key(color):
 	if color not in keys:
@@ -23,12 +25,8 @@ func remove_key(color) -> void:
 		keys.erase(color)
 		update_hotbar()
 
-
-
-
-var direction : Vector2 = Vector2.ZERO
-
-
+func update_light():
+	light.scale = Vector2(GameSettings.visibility, GameSettings.visibility)
 
 func read_input():
 	velocity = Vector2.ZERO
@@ -74,6 +72,8 @@ func update_animation():
 func _physics_process(delta: float) -> void:
 	read_input()
 	update_animation()
+	print(GameSettings.visibility)
+	update_light()
 
 
 
