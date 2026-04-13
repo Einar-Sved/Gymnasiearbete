@@ -1,5 +1,5 @@
-extends Node
-var speed = 100
+extends Node #detta script är global så den kan tas av andra scripts
+var speed = 100 
 var visibility =5
 
 # Called when the node enters the scene tree for the first time.

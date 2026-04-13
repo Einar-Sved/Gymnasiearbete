@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://q2d0tvu865yf"]
+
+[sub_resource type="GDScript" id="GDScript_nsakb"]
+script/source = "extends Area2D
+
+enum KeyColor { YELLOW, GREEN, BLUE, RED } #vilka färger man kan välja mellan
+@export var required_color : KeyColor #man väljer i granskaren
+
+var player_inside = null #inget är i arean
+var activated = false #den har inte blivit aktivead
+
+func _ready():
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
+
+func _process(delta):
+	if player_inside and not activated: #kollar om spelaren är inne i arean och att den inte blivit aktiverad än
+		if Input.is_action_just_pressed(\"interact\"): #om man trycker e
+			try_activate()
+
+func check_victory():
+	get_tree().get_first_node_in_group(\"main\").check_all_plates() #den tar nod trädet sen så tar den första noden ut gruppen main och den innehåller funktionen check all plates som körs
+
+
+func _on_body_entered(body):
+	if body.is_in_group(\"player\"): #kollar om spelaren är i gruppen player
+		player_inside = body #ändrar player inside till det som är i arean
+
+func _on_body_exited(body):
+	if body == player_inside: #om det som lämnar är det som var i arean 
+		player_inside = null #så är den borta nu
+
+func try_activate():
+	if player_inside.has_key(required_color): #kollar om spelarem har nyckeln man valt
+		player_inside.remove_key(required_color)#spelaren tappar nyckeln
+		activated = true#nu har den blivit aktiverad
+		make_white()
+		check_victory()
+
+func make_white():
+	$Sprite2D.modulate = Color.WHITE
+"
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dl81w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf172"]
+
+[node name="yellow_plate" type="Area2D" groups=["plates"]]
+position = Vector2(-38, 331)
+script = SubResource("GDScript_nsakb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+z_index = 10
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_dl81w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 7
+visibility_layer = 7
+z_index = 10
+shape = SubResource("RectangleShape2D_gf172")

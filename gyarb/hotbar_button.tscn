@@ -13,5 +13,5 @@ custom_minimum_size = Vector2(60, 30)
 offset_right = 17.0
 offset_bottom = 31.0
 shortcut = SubResource("Shortcut_vkc10")
-text = "x"
+text = "e"
 script = ExtResource("1_hh0l3")

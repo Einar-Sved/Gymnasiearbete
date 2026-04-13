@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	$"../vänster_uppe".rotate(PI/2)
+	$"../vänster_uppe".rotate(PI/2) #när spelaren går så roterar rummet runt origo

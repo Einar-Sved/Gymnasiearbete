@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	$"../uppe_höger".rotate(PI/2)
+	$"../uppe_höger".rotate(PI/2)#när player går in i arean roterar rummet 90 grader utifrån origo

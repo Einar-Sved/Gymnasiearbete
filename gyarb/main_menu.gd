@@ -12,17 +12,16 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://node_2d.tscn")
+	get_tree().change_scene_to_file("res://node_2d.tscn") #startar spelet
 
 
 
 
 
 func _on_button_3_pressed() -> void:
-	get_tree().exit()
+	get_tree().exit() #stänger ner spelet
 	
 
 
 func _on_button_2_pressed() -> void:
-	print("funkar")
 	pass

@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bto3uoyc7aeom" path="res://FREE_Adventurer 2D Pixel Art/Sprites/RUN/run_up.png" id="9_bwjto"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
-size = Vector2(14, 15)
+size = Vector2(15, 15)
 
 [sub_resource type="Gradient" id="Gradient_kdubu"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -529,7 +529,7 @@ position = Vector2(54, 53.5)
 scale = Vector2(0.15625, 0.164062)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(54, 53.5)
+position = Vector2(54.5, 53.5)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -545,7 +545,7 @@ texture = SubResource("GradientTexture2D_d21ai")
 texture_scale = 0.48
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(54, 50.5)
+position = Vector2(55, 52)
 scale = Vector2(0.8125, 0.7875)
 sprite_frames = SubResource("SpriteFrames_ivps1")
 animation = &"walk_up"
