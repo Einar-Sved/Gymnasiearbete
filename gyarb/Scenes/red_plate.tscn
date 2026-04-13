@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dq8shq2p1r2gs"]
 
-[ext_resource type="Script" uid="uid://bugtfm7ksj665" path="res://red_plate.gd" id="1_wc6pf"]
+[ext_resource type="Script" uid="uid://bugtfm7ksj665" path="res://Scripts/red_plate.gd" id="1_wc6pf"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_l4jit"]
 

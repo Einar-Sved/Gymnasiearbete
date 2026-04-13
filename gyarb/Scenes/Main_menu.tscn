@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dfdm6j6vuvksi"]
 
 [ext_resource type="Texture2D" uid="uid://dkuv1tgbhd7l2" path="res://FREE_Adventurer 2D Pixel Art/Sprites/ATTACK 1/attack1_down.png" id="1_b07fi"]
-[ext_resource type="Script" uid="uid://bllx1becxwwsg" path="res://main_menu.gd" id="1_x6lt7"]
+[ext_resource type="Script" uid="uid://bllx1becxwwsg" path="res://Scripts/main_menu.gd" id="1_x6lt7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x6lt7"]
 texture = ExtResource("1_b07fi")

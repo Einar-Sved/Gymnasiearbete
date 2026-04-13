@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bpf376rcqfcbe"]
 
 [ext_resource type="Texture2D" uid="uid://bfsvcn0iwg84b" path="res://The Fantasy Tileset - Animated Character/Main Character/Character_Idle.png" id="1_f50pn"]
-[ext_resource type="Script" uid="uid://bdmrp4haf6087" path="res://npc_area.gd" id="2_ij6vw"]
+[ext_resource type="Script" uid="uid://bdmrp4haf6087" path="res://Scripts/npc_area.gd" id="2_ij6vw"]
 
 [sub_resource type="GDScript" id="GDScript_ij6vw"]
 script/source = "extends CharacterBody2D

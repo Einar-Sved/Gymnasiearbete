@@ -13,11 +13,11 @@ config_version=5
 config/name="gyarb"
 run/main_scene="uid://dfdm6j6vuvksi"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://bilder/icon.svg"
 
 [autoload]
 
-GameSettings="*res://game_settings.gd"
+GameSettings="*res://Scripts/game_settings.gd"
 
 [global_group]
 
